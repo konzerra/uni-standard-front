@@ -2,20 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminStandardRoutingModule } from './admin-standard-routing.module';
-import { AdminStandardMainComponent } from './admin-standard-main/admin-standard-main.component';
-import { AdminStandardSaveComponent } from './admin-standard-save/admin-standard-save.component';
-import { AdminStandardUpdateComponent } from './admin-standard-update/admin-standard-update.component';
+import {CoreModule} from "../../core/core.module";
+import {StandardManageComponent} from "./standard.manage/standard.manage.component";
+import {StandardSaveComponent} from "./standard.save/standard.save.component";
+import {StandardUpdateComponent} from "./standard.update/standard.update.component";
 
 
 @NgModule({
   declarations: [
-    AdminStandardMainComponent,
-    AdminStandardSaveComponent,
-    AdminStandardUpdateComponent
+      StandardManageComponent,
+      StandardSaveComponent,
+      StandardUpdateComponent
   ],
   imports: [
     CommonModule,
-    AdminStandardRoutingModule
+    AdminStandardRoutingModule,
+    CoreModule
   ]
 })
 export class AdminStandardModule { }

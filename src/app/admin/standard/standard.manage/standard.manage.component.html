@@ -1,0 +1,54 @@
+<body>
+<div class = "wrapper container pt-5 " >
+    <h2 class="mt-5">{{'questions' | translate}}</h2>
+
+    <table class="table " >
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">{{'question' | translate}}</th>
+            <th scope="col">
+                <button type="button" class="btn btn-primary btn-sm text-nowrap"
+                        (click)="onAddClicked()"
+                >
+                    <i class="bi bi-plus"></i>
+                    {{'add' | translate}}
+                </button>
+            </th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr *ngFor="let i = index; let model of modelPage.content | paginate :{
+    itemsPerPage: 10,
+    currentPage : modelPage.number+1,
+    totalItems: modelPage.totalElements
+    }">
+            <th>{{model.id}}</th>
+            <td>{{model.question}}</td>
+            <td class = "text-nowrap">
+                <! –– edit button ––>
+                <button type="button" class="btn btn-primary btn-sm me-2" (click)="onEdit(model)">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <! –– delete ––>
+                <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteClicked(model, i)">
+                    <i class="bi bi-trash text-light"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination box -->
+    <pagination-controls
+            class="pagination mb-5"
+            (pageChange)="onPageChange($event)"
+    ></pagination-controls>
+    <br>
+
+</div>
+
+</body>
+
+
+

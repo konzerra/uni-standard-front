@@ -1,0 +1,42 @@
+
+{
+  "main": "Main",
+  "header_title": "Journal KSTU",
+  "magazine_name": "Journal Razzakov's University",
+  "publish": "Publish",
+  "about_magazine": "About magazine",
+  "publication_ethics": "Publication ethics",
+  "working_stuff": "Working stuff",
+
+  "previous": "Previous",
+  "next": "Next",
+
+  "registration": "Registration",
+  "register": "Register",
+  "already_registered": "Already registered?",
+  "sign_in": "Sign in",
+  "sign_out": "Sign out",
+
+
+  "name": "Name",
+  "title": "Title",
+  "search": "Search",
+  "articles_search_options": "Enter name,tags,authors",
+
+  "person_name": "Name",
+  "enter_person_name": "Enter your name",
+  "new_user": "New user?",
+
+  "add": "Add",
+  "save": "Save",
+  "update": "Update",
+  "cancel": "Cancel",
+  "control": "Control",
+
+  "ok": "Ok",
+  "any_questions": "Any questions?",
+
+  "admin": "Admin",
+
+  "criteria": "Criteria"
+}

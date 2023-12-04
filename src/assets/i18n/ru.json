@@ -1,0 +1,43 @@
+
+{
+  "main": "Главная",
+  "header_title": "Известия КГТУ",
+  "magazine_name": "Журнал \"Известия КГТУ им. И.Раззакова\"",
+  "publish": "Опубликовать",
+  "about_magazine": "О журнале",
+  "publication_ethics": "Этика публикаций",
+  "working_stuff": "Рабочий состав",
+
+  "previous": "Предыдущий",
+  "next": "Следующий",
+
+  "registration": "Регистрация",
+  "register": "Зарегистрироваться",
+  "already_registered": "Уже зарегистрированы?",
+  "sign_in": "Войти",
+  "sign_out": "Выйти",
+
+
+  "name": "Название",
+  "title": "Название",
+  "search": "Поиск",
+  "articles_search_options": "Введите название, ключевые слова, авторов",
+
+
+  "person_name": "Имя",
+  "enter_person_name": "Введите ваше имя",
+  "new_user": "Новый пользователь?",
+
+  "add": "Добавить",
+  "save": "Сохранить",
+  "update": "Обновить",
+  "cancel": "Отмена",
+  "control": "Управление",
+
+  "ok": "Ок",
+  "any_questions": "Есть вопросы?",
+
+  "admin": "Админ",
+
+  "criteria": "Критерии"
+}

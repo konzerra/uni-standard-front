@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
+import {routing} from "../../routing";
 
 @Component({
   selector: 'app-admin-main',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AdminMainComponent {
 
+  constructor(
+      private router: Router
+  ) {
+  }
+
+  onCriteria() {
+    this.router.navigate([routing.admin.standard.manage])
+  }
 }
