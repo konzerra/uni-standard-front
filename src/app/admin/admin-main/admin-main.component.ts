@@ -17,4 +17,8 @@ export class AdminMainComponent {
   onCriteria() {
     this.router.navigate([routing.admin.standard.manage])
   }
+
+  onReports() {
+    this.router.navigate([routing.admin.report.manage])
+  }
 }

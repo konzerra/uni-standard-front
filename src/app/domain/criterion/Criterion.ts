@@ -1,5 +1,5 @@
 export interface Criterion {
-  id?: number | null;
+  id: number;
   name: string;
   description: string;
   value: number;

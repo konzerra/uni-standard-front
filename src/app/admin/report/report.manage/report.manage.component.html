@@ -1,0 +1,46 @@
+
+<div class="container pt-5">
+  <h1 class="mt-5">Отчеты</h1>
+  <div class="col-md-7">
+    <mat-accordion >
+      <div *ngFor="let standard of modelPage.content, let sIndex = index">
+        <mat-expansion-panel class="mt-3">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{standard.name}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-raised-button color="primary" class="mat-small" (click)="onAddReport(standard.id)">Добавить отчет</button>
+          <mat-divider class="mt-2"></mat-divider>
+          <mat-accordion>
+            <div *ngFor="let report of standard.reports">
+              <mat-expansion-panel class="mt-3">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{report.university.name}}
+                  </mat-panel-title>
+                  <label class="me-3">{{report.average | ratio}}</label>
+                </mat-expansion-panel-header>
+                <mat-card-actions>
+                  <button mat-button (click)="onUpdate(report.id)">Изменить</button>
+                  <button mat-button (click)="onDelete(report.id)">Удалить</button>
+                </mat-card-actions>
+              </mat-expansion-panel>
+            </div>
+
+
+          </mat-accordion>
+
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+  </div>
+
+
+
+
+</div>
+
+
+
+

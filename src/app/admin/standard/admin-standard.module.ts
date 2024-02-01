@@ -6,6 +6,7 @@ import {CoreModule} from "../../core/core.module";
 import {StandardManageComponent} from "./standard.manage/standard.manage.component";
 import {StandardSaveComponent} from "./standard.save/standard.save.component";
 import {StandardUpdateComponent} from "./standard.update/standard.update.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -14,10 +15,11 @@ import {StandardUpdateComponent} from "./standard.update/standard.update.compone
       StandardSaveComponent,
       StandardUpdateComponent
   ],
-  imports: [
-    CommonModule,
-    AdminStandardRoutingModule,
-    CoreModule
-  ]
+    imports: [
+        CommonModule,
+        AdminStandardRoutingModule,
+        CoreModule,
+        FormsModule
+    ]
 })
 export class AdminStandardModule { }

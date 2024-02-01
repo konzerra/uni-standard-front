@@ -16,7 +16,6 @@ import {AngularMaterialModule} from "../angular-material/angular-material.module
   imports: [
     CommonModule,
     CoreModule,
-    AngularMaterialModule,
     RouterLink
   ],
   exports:[

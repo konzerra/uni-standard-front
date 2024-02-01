@@ -1,3 +1,30 @@
-<div class="container-fluid pt-5">
-  <p class="mt-5"> Main</p>
+<div class="container pt-5">
+  <h1 class="mt-5">Оценочные показатели мониторинга образования вузов</h1>
+  <mat-divider></mat-divider>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor="let standard of standardReports" >
+        <mat-card class="mt-3 panel me-md-5"
+                  [class.chosen-one]="standard.id == selectedStandard?.id"
+                  (click)="onStandardClicked(standard)"
+        >
+          <h3 class="mt-3 ms-3">{{standard.name+' '+standard.version}}</h3>
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngFor="let report of selectedStandard?.reports" >
+        <mat-expansion-panel class="mt-3 panel ms-md-5" hideToggle (click)="onReportClicked(report)">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <label>{{report.university.name + ' ' + report.university.version}}</label>
+            </mat-panel-title>
+            <label class="me-3">{{report.average | ratio}}</label>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+
+
 </div>

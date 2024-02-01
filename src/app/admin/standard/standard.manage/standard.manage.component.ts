@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StandardService} from "../../../domain/standard/standard.service";
 import {Router} from "@angular/router";
 import {PageRequestDto} from "../../../domain/api/PageRequestDto";
 import {Standard, StandardPage} from "../../../domain/standard/Standard";
 import {routing} from "../../../routing";
 import {DialogsService} from "../../../shared/dialogs/dialogs.service";
+import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-standard.manage',
   templateUrl: './standard.manage.component.html',
   styleUrl: './standard.manage.component.scss'
 })
-export class StandardManageComponent {
+export class StandardManageComponent implements OnInit{
 
   constructor(
-      private tipService: StandardService,
+      private standardService: StandardService,
       protected dialogsService: DialogsService,
       protected router: Router,
   ) {
@@ -41,8 +42,10 @@ export class StandardManageComponent {
     totalElements: 0,
     totalPages: 0
   }
+  pageSizeOptions = [ 10, 25, 100];
+
   ngOnInit(): void {
-    this.tipService.getPaginated(this.pageRequestDto).subscribe(
+    this.standardService.getPaginated(this.pageRequestDto).subscribe(
         {
           next:(modelPage)=>{
             this.modelPage = modelPage
@@ -66,7 +69,7 @@ export class StandardManageComponent {
     this.dialogsService.openConfirmDialog().afterClosed().subscribe({
       next:(value: any)=>{
         if(value){
-          this.tipService.deleteById(model.id.toString()).subscribe({
+          this.standardService.deleteById(model.id.toString()).subscribe({
             complete:()=>{
               this.dialogsService.openInfoDialog("Успешно удалено")
               this.modelPage.content.splice(index,1)
@@ -85,9 +88,10 @@ export class StandardManageComponent {
         {queryParams: {id: JSON.stringify(model.id)}}
     )
   }
-  onPageChange($event: number) {
-    this.pageRequestDto.page = $event-1
-    this.tipService.getPaginated(this.pageRequestDto).subscribe(
+  onPageChange($event:PageEvent) {
+    this.pageRequestDto.page = $event.pageIndex
+    this.pageRequestDto.size = $event.pageSize
+    this.standardService.getPaginated(this.pageRequestDto).subscribe(
         {
           next:(modelPage)=>{
             this.modelPage = modelPage
@@ -100,4 +104,6 @@ export class StandardManageComponent {
           }
         })
   }
+
+
 }

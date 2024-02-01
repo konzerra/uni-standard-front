@@ -1,0 +1,28 @@
+<div class="container pt-5">
+  <h1 class="mt-5">{{report.university.name || ''}}</h1>
+  <table class="table table-bordered table-hover">
+    <thead class="sticky-top">
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Нормативное значение</th>
+      <th scope="col">Фактическое значение</th>
+      <th scope="col">Результат</th>
+    </tr>
+    </thead>
+
+    <ng-container *ngFor="let gIndex = index; let group of report.evaluationGroups">
+      <!--      Group title      -->
+      <tr>
+        <th  colspan="4" class="th-title">
+          <h3 style="width: 100%" class="text-center ">{{group.criteriaGroup.name}}</h3>
+        </th>
+      </tr>
+      <tr class="" *ngFor="let eIndex = index;  let evaluation of group.evaluations;" >
+        <td>{{evaluation.criterion.name}}</td>
+        <td>{{evaluation.criterion.value}}</td>
+        <td>{{evaluation.value}}</td>
+        <td>{{evaluation.result | ratio}}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

@@ -39,5 +39,11 @@
 
   "admin": "Админ",
 
-  "criteria": "Критерии"
+  "criteria": "Показатели",
+  "faq": "Справочник",
+  "reports": "Отчеты",
+  "status": "Статус",
+  "criteria_group": "Разделы",
+  "version": "Версия",
+  "criteria_registration": "Регистрация показателей"
 }

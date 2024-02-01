@@ -3,6 +3,8 @@ import {AppLanguage} from "../../translate/AppLanguage";
 import {FormControl} from "@angular/forms";
 import {TranslateService} from "@ngx-translate/core";
 import {Router} from "@angular/router";
+import {AuthService} from "../../auth/auth.service";
+import {routing} from "../../routing";
 
 @Component({
   selector: 'app-header',
@@ -14,7 +16,7 @@ export class HeaderComponent {
   langs = Object.values(AppLanguage.languages)
   selectedLang = new FormControl<string>(AppLanguage.languages.Ru)
   constructor(
-    //private userAuthService:AuthService,
+    private userAuthService:AuthService,
     private translate: TranslateService,
     private router: Router
   ) { }
@@ -26,15 +28,15 @@ export class HeaderComponent {
   }
 
   onProfileClicked(){
-    // if(this.userAuthService.isLoggedIn()){
-    //   this.router.navigate([ComponentRoutingPaths.userControl.profile])
-    //   return
-    // }
-    // this.router.navigate([ComponentRoutingPaths.userControl.signin])
+    if(this.userAuthService.isLoggedIn()){
+      this.router.navigate([routing.user.profile])
+      return
+    }
+    this.router.navigate([routing.auth.signin])
   }
-  // hasRole(role:string): boolean{
-  //   return this.userAuthService.hasRole(role)
-  // }
+  hasRole(role:string): boolean{
+    return this.userAuthService.hasRole(role)
+  }
 
   onLangChange() {
     const lang = this.selectedLang.value ?? "kg"

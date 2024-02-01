@@ -4,6 +4,16 @@ import {AdminMainComponent} from "./admin-main/admin-main.component";
 
 const routes: Routes = [
   { path: '', component: AdminMainComponent },
+  {
+    path: 'standard',
+    loadChildren: () => import('./standard/admin-standard.module').then(m => m.AdminStandardModule),
+    //canActivate:[AuthGuard], data:{role:'Admin'}
+  },
+  {
+    path: 'report',
+    loadChildren: () => import('./report/admin-report.module').then(m => m.AdminReportModule),
+    //canActivate:[AuthGuard], data:{role:'Admin'}
+  },
   { path: '**', redirectTo: '', pathMatch: 'prefix' },
 ];
 

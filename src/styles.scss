@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use '@angular/material' as mat;
+@import 'src/assets/colors';
+
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Open Sans, sans-serif'
+);
+
+@include mat.typography-hierarchy($custom-typography);
+
+$app-theme: mat.define-light-theme((typography: $custom-typography));
+
+@include mat.all-component-themes($app-theme);
+

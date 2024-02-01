@@ -1,0 +1,319 @@
+
+<div class="container pt-5">
+  <h1 class="mt-5">Регистрация отчета по нормативу</h1>
+  <mat-stepper #stepper labelPosition="bottom">
+
+    <!-- Uni form-->
+    <mat-step [editable]="true">
+      <ng-template matStepLabel>Данные университета</ng-template>
+      <h1>Университет</h1>
+
+      <div class="col-md-7">
+        <mat-form-field class="w-100">
+          <mat-label>Версия</mat-label>
+          <input matInput type="text" placeholder="Введите версию" [formControl]="form.university.version"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.version.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Название</mat-label>
+          <input matInput type="text" placeholder="Введите название" [formControl]="form.university.name"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.name.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Адрес</mat-label>
+          <input matInput type="text" placeholder="Введите адрес" [formControl]="form.university.address"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.address.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Год образования</mat-label>
+          <input matInput type="number" placeholder="Введите год образования" [formControl]="form.university.yearFounded"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.yearFounded.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>ФИО ректора</mat-label>
+          <input matInput type="text" placeholder="Введите ФИО ректора" [formControl]="form.university.rectorName"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.rectorName.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Количество учебных подразделений</mat-label>
+          <input matInput type="number" placeholder="Введите количество учебных подразделений" [formControl]="form.university.numOfEducationalUnits"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.numOfEducationalUnits.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Количество принятых на 1 курс студентов в отчетном году</mat-label>
+          <input matInput type="number" placeholder="Введите количество студентов" [formControl]="form.university.numOfFirstYearStudents"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.numOfFirstYearStudents.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Количество выпускников в отчетном году</mat-label>
+          <input matInput type="number" placeholder="Введите количество выпускников" [formControl]="form.university.numOfGraduates"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.numOfGraduates.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+          <mat-label>Общая площадь учебного фонда</mat-label>
+          <input matInput type="number" placeholder="Введите площадь" [formControl]="form.university.totalAreaOfEducationalFund"
+                 [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="form.university.totalAreaOfEducationalFund.hasError('required')">
+            Обязательное поле
+          </mat-error>
+        </mat-form-field>
+
+        <!-- StudentNumberSaveForm -->
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Данные о студентах</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <mat-form-field class="w-100">
+              <mat-label>Бакалавры</mat-label>
+              <input matInput type="number" placeholder="Введите количество бакалавров" [formControl]="form.university.studentNumber.bachelor"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.bachelor.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Магистры</mat-label>
+              <input matInput type="number" placeholder="Введите количество магистров" [formControl]="form.university.studentNumber.master"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.master.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Специальность</mat-label>
+              <input matInput type="number" placeholder="Введите количество студентов по специальности" [formControl]="form.university.studentNumber.specialty"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.specialty.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>СПО</mat-label>
+              <input matInput type="number" placeholder="Введите количество студентов по СПО" [formControl]="form.university.studentNumber.spo"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.spo.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Аспиранты</mat-label>
+              <input matInput type="number" placeholder="Введите количество аспирантов" [formControl]="form.university.studentNumber.postgraduate"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.postgraduate.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Доктора наук</mat-label>
+              <input matInput type="number" placeholder="Введите количество докторов наук" [formControl]="form.university.studentNumber.doctorate"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.doctorate.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Слушатели</mat-label>
+              <input matInput type="number" placeholder="Введите количество слушателей" [formControl]="form.university.studentNumber.seeker"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.seeker.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Аспиранты (PhD)</mat-label>
+              <input matInput type="number" placeholder="Введите количество аспирантов (PhD)" [formControl]="form.university.studentNumber.phd"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.studentNumber.phd.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <!-- Add mat-form-fields for other properties of StudentNumberSaveForm -->
+
+          </mat-card-content>
+        </mat-card>
+
+        <!-- ProgramNumberSaveForm -->
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Данные о программах</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+
+            <mat-form-field class="w-100">
+              <mat-label>Бакалавры</mat-label>
+              <input matInput type="number" placeholder="Введите количество программ бакалавра" [formControl]="form.university.programNumber.bachelor"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.programNumber.bachelor.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Магистры</mat-label>
+              <input matInput type="number" placeholder="Введите количество программ магистратуры" [formControl]="form.university.programNumber.master"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.programNumber.master.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Специальность</mat-label>
+              <input matInput type="number" placeholder="Введите количество программ по специальности" [formControl]="form.university.programNumber.specialty"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.programNumber.specialty.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>СПО</mat-label>
+              <input matInput type="number" placeholder="Введите количество прогрмамм по СПО" [formControl]="form.university.programNumber.spo"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.programNumber.spo.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>ДПО</mat-label>
+              <input matInput type="number" placeholder="Введите количество программ по ДПО" [formControl]="form.university.programNumber.dpo"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.programNumber.dpo.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+          </mat-card-content>
+        </mat-card>
+
+        <!-- AcademicStaffTrainingSaveForm -->
+        <mat-card class="mt-2">
+          <mat-card-header>
+            <mat-card-title>Данные о научно-педагогических кадрах</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <mat-form-field class="w-100">
+              <mat-label>Аспиранты</mat-label>
+              <input matInput type="number" placeholder="Введите количество аспирантов" [formControl]="form.university.academicStaffTraining.postgraduate"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.academicStaffTraining.postgraduate.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>Доктора наук</mat-label>
+              <input matInput type="number" placeholder="Введите количество докторов наук" [formControl]="form.university.academicStaffTraining.doctoral"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.academicStaffTraining.doctoral.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <mat-label>PhD</mat-label>
+              <input matInput type="number" placeholder="Введите количество PhD" [formControl]="form.university.academicStaffTraining.phd"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="form.university.academicStaffTraining.phd.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <button mat-button matStepperNext class="mt-3 mb-5">Следующий</button>
+    </mat-step>
+
+
+    <div *ngFor="let evaluationGroup of form.evaluationGroups, let i = index">
+      <mat-step>
+        <ng-template matStepLabel>{{i+1 + ". Раздел"}}</ng-template>
+        <div class="col-md-7">
+          <div *ngFor="let evaluation of evaluationGroup.criteria">
+
+            <mat-form-field  class="w-100" >
+              <mat-label>{{evaluation.criterion.name}}</mat-label>
+              <input matInput type="number" placeholder="Введите значение" [formControl]="evaluation.value"
+                     [errorStateMatcher]="matcher">
+              <mat-error *ngIf="evaluation.value.hasError('required')">
+                Обязательное поле
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>Предыдущий</button>
+            <button mat-button matStepperNext>Следующий</button>
+          </div>
+        </div>
+      </mat-step>
+    </div>
+
+
+
+
+
+    <mat-step>
+      <ng-template matStepLabel>Завершение</ng-template>
+      <p>Сохраните данные.</p>
+      <button mat-raised-button color="primary" class="mat-small" (click)="onSave()">Сохранить</button>
+      <div>
+        <button mat-button matStepperPrevious>Предыдущий</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+</div>

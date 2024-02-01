@@ -38,5 +38,11 @@
 
   "admin": "Admin",
 
-  "criteria": "Criteria"
+  "criteria": "Criteria",
+  "faq": "FAQ",
+  "reports": "Reports",
+  "status": "Status",
+  "criteria_group": "Sections",
+  "version": "Version",
+  "criteria_registration": "Criteria registration"
 }
