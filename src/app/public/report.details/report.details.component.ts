@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
 import {PublicViewService} from "../public.view.service";
 import {Report} from "../../domain/report/Report";
 import {Router} from "@angular/router";
@@ -13,24 +12,7 @@ import {routing} from "../../routing";
 export class ReportDetailsComponent {
 
   report!: Report
-  groups = [
-    {
-      id: "group1",
-      name: "Group 1",
-      evaluations: [
-        { id: "1" }
-      ]
-    },
-    {
-      id: "group2",
-      name: "Group 2",
-      evaluations: [
-        { id: "2" },
-        { id: "3" }
-      ]
-    },
-    // Add more groups as needed
-  ];
+
   constructor(
     private viewService: PublicViewService,
     private router: Router
@@ -42,6 +24,4 @@ export class ReportDetailsComponent {
     }
 
   }
-
-  protected readonly onkeypress = onkeypress;
 }

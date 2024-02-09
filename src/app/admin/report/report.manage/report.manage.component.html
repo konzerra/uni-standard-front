@@ -9,34 +9,48 @@
             <mat-panel-title>
               {{standard.name}}
             </mat-panel-title>
+            <mat-panel-description>
+              {{standard.version}}
+            </mat-panel-description>
           </mat-expansion-panel-header>
-          <button mat-raised-button color="primary" class="mat-small" (click)="onAddReport(standard.id)">Добавить отчет</button>
+          <mat-card-actions>
+            <button mat-button class="mat-small" (click)="onAddReport(standard.id)">Добавить отчет</button>
+            <button mat-button class="mat-small" (click)="onStandardLookUp(standard)">Просмотр</button>
+            <button mat-button class="mat-small" (click)="onF1Download(standard)">Скачать Ф.1</button>
+          </mat-card-actions>
           <mat-divider class="mt-2"></mat-divider>
+
+          <!-- Loop of reports -->
           <mat-accordion>
             <div *ngFor="let report of standard.reports">
               <mat-expansion-panel class="mt-3">
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    {{report.university.name}}
+                    {{report.university.name+' '+report.university.version}}
                   </mat-panel-title>
                   <label class="me-3">{{report.average | ratio}}</label>
                 </mat-expansion-panel-header>
                 <mat-card-actions>
-                  <button mat-button (click)="onUpdate(report.id)">Изменить</button>
-                  <button mat-button (click)="onDelete(report.id)">Удалить</button>
+                  <button mat-button class="mat-small" (click)="onUpdate(report.id)">Изменить</button>
+                  <button mat-button class="mat-small" (click)="onReportLookUp(report)">Просмотр</button>
+                  <button mat-button class="mat-small" (click)="onF2Download(report)">Скачать Ф.2</button>
+                  <button mat-button class="mat-small" (click)="onDelete(report.id)">Удалить</button>
                 </mat-card-actions>
               </mat-expansion-panel>
             </div>
-
-
           </mat-accordion>
-
         </mat-expansion-panel>
       </div>
+
     </mat-accordion>
+    <mat-paginator
+      class="mb-5"
+      [length]="modelPage.totalElements"
+      [pageSize]="modelPage.size"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChange($event)">
+    </mat-paginator>
   </div>
-
-
 
 
 </div>

@@ -21,4 +21,8 @@ export class AdminMainComponent {
   onReports() {
     this.router.navigate([routing.admin.report.manage])
   }
+
+  onTips() {
+    this.router.navigate([routing.admin.tip.manage])
+  }
 }

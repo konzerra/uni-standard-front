@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { Report} from "../../../domain/report/Report";
-import {Standard, StandardPage, StandardReportsPage} from "../../../domain/standard/Standard";
 import {StandardService} from "../../../domain/standard/standard.service";
 import {DialogsService} from "../../../shared/dialogs/dialogs.service";
 import {Router} from "@angular/router";
@@ -8,6 +7,9 @@ import {PageRequestDto} from "../../../domain/api/PageRequestDto";
 import {PageEvent} from "@angular/material/paginator";
 import {routing} from "../../../routing";
 import {ReportService} from "../../../domain/report/report.service";
+import {ReportViewService} from "../report.view.service";
+import {ReportExcelService} from "../report-excel.service";
+import {StandardReports, StandardReportsPage} from "../../../domain/standard/Standard";
 
 @Component({
   selector: 'app-report.manage',
@@ -19,6 +21,8 @@ export class ReportManageComponent implements OnInit{
   constructor(
     private standardService: StandardService,
     private reportService: ReportService,
+    private reportViewService: ReportViewService,
+    private reportExcelService: ReportExcelService,
     protected dialogsService: DialogsService,
     protected router: Router,
   ) {
@@ -45,7 +49,7 @@ export class ReportManageComponent implements OnInit{
     totalElements: 0,
     totalPages: 0
   }
-  pageSizeOptions = [ 10, 25, 100];
+  pageSizeOptions = [ 2,10, 25, 100];
 
   ngOnInit(): void {
     this.standardService.getPaginatedWithReports(this.pageRequestDto).subscribe(
@@ -94,6 +98,7 @@ export class ReportManageComponent implements OnInit{
 
   onDelete(id: number) {
     this.dialogsService.openConfirmDialog().afterClosed().subscribe({
+      //TODO if v is not checked what happens
       next:(v)=>{
         this.reportService.deleteById(id.toString()).subscribe({
           error:(err)=> this.dialogsService.openInfoDialog(err),
@@ -102,5 +107,22 @@ export class ReportManageComponent implements OnInit{
       }
     })
 
+  }
+
+  onStandardLookUp(standard: StandardReports) {
+    this.reportViewService.setStandard(standard)
+    this.router.navigate([routing.admin.report.standard])
+  }
+  onReportLookUp(report: Report) {
+    this.reportViewService.setReport(report)
+    this.router.navigate([routing.admin.report.uni])
+  }
+
+  onF1Download(standard: StandardReports) {
+    this.reportExcelService.standardToExcel(standard)
+  }
+
+  onF2Download(report: Report) {
+    this.reportExcelService.reportToExcel(report)
   }
 }

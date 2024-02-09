@@ -1,7 +1,5 @@
-import {StandardSaveDto} from "../../../domain/standard/dto/StandardSaveDto";
+
 import {FormControl, Validators} from "@angular/forms";
-import {CriteriaGroupSaveDto} from "../../../domain/CriteriaGroup/CriteriaGroupSaveDto";
-import {CriterionSaveDto} from "../../../domain/criterion/CriterionSaveDto";
 import {StandardUpdateDto} from "../../../domain/standard/dto/StandardUpdateDto";
 import {CriterionUpdateDto} from "../../../domain/criterion/CriterionUpdateDto";
 import {Criterion} from "../../../domain/criterion/Criterion";

@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RatioPipe} from "./PercentagePipe";
+import {RatioPipe} from "./RatioPipe";
+import {TruncatePipe} from "./TruncatePipe";
 
 
 
 @NgModule({
   declarations: [
-    RatioPipe
+    RatioPipe,
+    TruncatePipe
   ],
   exports: [
-    RatioPipe
+    RatioPipe,
+    TruncatePipe
   ],
   imports: [
     CommonModule

@@ -6,13 +6,14 @@ import { MainComponent } from './main/main.component';
 import {CoreModule} from "../core/core.module";
 import {PipesModule} from "../_pipes/pipes.module";
 import {ReportDetailsComponent} from "./report.details/report.details.component";
-import {PublicViewService} from "./public.view.service";
+import {HandbookComponent} from "./handbook/handbook.component";
 
 
 @NgModule({
   declarations: [
     MainComponent,
-    ReportDetailsComponent
+    ReportDetailsComponent,
+    HandbookComponent
   ],
   imports: [
     CommonModule,

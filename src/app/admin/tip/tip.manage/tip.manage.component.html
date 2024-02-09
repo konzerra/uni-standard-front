@@ -1,0 +1,52 @@
+
+<body>
+<div class = "wrapper container pt-5 " >
+  <h2 class="mt-5">Справочник</h2>
+
+  <table class="table" >
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Вопрос</th>
+      <th scope="col">Ответ</th>
+      <th scope="col">
+        <button type="button" class="btn btn-primary btn-sm text-nowrap"
+                (click)="onAddClicked()"
+        >
+          <i class="bi bi-plus"></i>
+          Добавить
+        </button>
+      </th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let i = index; let model of modelPage.content">
+      <th>{{model.id}}</th>
+      <td>{{model.question | truncate : 30}}</td>
+      <td>{{model.answer | truncate : 30}}</td>
+      <td class = "text-nowrap">
+        <! –– edit button ––>
+        <button type="button" class="btn btn-primary btn-sm me-2" (click)="onEdit(model)">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <! –– delete ––>
+        <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteClicked(model, i)">
+          <i class="bi bi-trash text-light"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+  <mat-paginator [length]="modelPage.totalElements"
+                 [pageSize]="modelPage.size"
+                 [pageSizeOptions]="pageSizeOptions"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+  <br>
+
+</div>
+
+</body>

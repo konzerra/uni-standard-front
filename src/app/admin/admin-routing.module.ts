@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () => import('./report/admin-report.module').then(m => m.AdminReportModule),
     //canActivate:[AuthGuard], data:{role:'Admin'}
   },
+  {
+    path: 'tip',
+    loadChildren: () => import('./tip/admin-tip.module').then(m => m.AdminTipModule),
+    //canActivate:[AuthGuard], data:{role:'Admin'}
+  },
   { path: '**', redirectTo: '', pathMatch: 'prefix' },
 ];
 

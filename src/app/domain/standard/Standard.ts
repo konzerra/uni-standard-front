@@ -17,6 +17,7 @@ export interface StandardReports{
   version: string;
   description: string;
   status: string;
+  criteriaGroups: CriteriaGroup[];
   reports: Report[]
 }
 export interface StandardPage extends ModelPageI<Standard>{

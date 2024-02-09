@@ -8,6 +8,8 @@ import {ReportManageComponent} from "./report.manage/report.manage.component";
 import {SharedModule} from "../../shared/shared.module";
 import {CoreModule} from "../../core/core.module";
 import {PipesModule} from "../../_pipes/pipes.module";
+import {ReportUniComponent} from "./report.uni/report.uni.component";
+import {ReportStandardComponent} from "./report.standard/report.standard.component";
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import {PipesModule} from "../../_pipes/pipes.module";
     ReportUpdateComponent,
     ReportSaveComponent,
     ReportManageComponent,
+    ReportUniComponent,
+    ReportStandardComponent
   ],
     imports: [
         CommonModule,

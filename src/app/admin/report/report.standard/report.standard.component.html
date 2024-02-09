@@ -1,0 +1,19 @@
+<div class="container pt-5">
+  <h1 class="mt-5">{{standard.name + ' ' + standard.version }}</h1>
+  <table class="table table-bordered table-hover">
+    <thead class="sticky-top">
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Название вуза</th>
+      <th scope="col">Итоговый показатель мониторинга</th>
+      <th scope="col">Примечание</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let i = index, let report of standard.reports">
+      <td>{{i+1}}</td>
+      <td>{{report.university.name}}</td>
+      <td>{{report.average | ratio}}</td>
+      <td>{{report.reserve !== 0 ? (report.reserve | ratio) : ''}}</td>
+    </tr>
+  </table>
+</div>
