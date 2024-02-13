@@ -1,0 +1,111 @@
+
+.title {
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.space-top{
+  margin-top: 5rem
+}
+
+.title-image-container{
+  display: flex;
+  justify-content: center;
+}
+.title-image {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+.panel-image{
+  width: 100px;
+  margin-top: 20px;
+}
+@media (min-width: 768px) { // Medium devices (tablets, landscape phones)
+  .title-image {
+    width: 150px;
+  }
+  .panel-image{
+    width: 90px
+  }
+  .space-top{
+    margin-top: 5rem
+  }
+}
+
+@media (min-width: 992px) { // Large devices (desktops)
+  .title-image {
+    width: 200px;
+  }
+  .panel-image{
+    width: 110px
+  }
+  .space-top{
+    margin-top: 10rem
+  }
+}
+
+@media (min-width: 1200px) { // Extra large devices (large desktops)
+  .title-image {
+    width: 250px;
+  }
+  .panel-image{
+    width: 130px
+  }
+
+  .space-top{
+    margin-top: 10rem
+  }
+}
+
+.panel{
+  margin: 20px;
+  padding: 10px;
+  width: 250px;
+  min-width: 250px;
+  position: relative;
+  color: white;
+  top: 0;
+  border-radius: 1%;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  background-color: rgb(10, 98, 191,0.8);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  /* Apply CSS Flexbox to center content vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-icon{
+  font-size: 3em;
+  color: white;
+}
+
+.panel:hover{
+  background: linear-gradient(
+      45deg,
+      rgba(29, 236, 197, 0.5),
+      rgba(91, 14, 214, 0.5) 100%
+  );
+  top: -10px;
+}
+
+.swiper-slide-content {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the content takes the full height of the slide */
+}
+
+.end-position{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+

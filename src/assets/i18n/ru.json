@@ -17,6 +17,17 @@
   "sign_in": "Войти",
   "sign_out": "Выйти",
 
+  "forgot_password": "Забыли пароль?",
+  "reset_password": "Сбросить пароль",
+  "password_reset": "Сброс пароля",
+  "email": "Почта",
+  "enter_email": "Введите почту",
+  "password": "Пароль",
+  "enter_password": "Введите пароль",
+  "login": "Войти",
+  "successful_registration_message": "Вы успешно зарегистрировались!",
+  "can_login_message": "Теперь вы можете войти",
+  "error": "Ошибка!",
 
   "name": "Название",
   "title": "Название",

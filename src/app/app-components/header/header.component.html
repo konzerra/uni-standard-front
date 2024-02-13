@@ -21,16 +21,6 @@
         </li>
       </ul>
       <ul class="nav navbar-nav ">
-        <select class="lang-select ms-3"
-                id="category"
-                [formControl]="selectedLang"
-                (change)="onLangChange()"
-                required
-        >
-          <option *ngFor="let lang of langs"
-                  [value]="lang">{{lang}}
-          </option>
-        </select>
 
         <li class="nav-item ms-3 me-3" (click)="onProfileClicked()">
           <i class="bi bi-person-circle account-icon"></i>
