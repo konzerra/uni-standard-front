@@ -1,22 +1,23 @@
 import {Component, OnInit} from '@angular/core';
-import {PageEvent} from "@angular/material/paginator";
 import {DialogsService} from "../../../shared/dialogs/dialogs.service";
 import {Router} from "@angular/router";
 import {PageRequestDto} from "../../../domain/api/PageRequestDto";
-import {routing} from "../../../routing";
-import {TipService} from "../../../domain/tip/tip.service";
 import {ModelPageI} from "../../../_generic/ModelPageI";
 import {Tip} from "../../../domain/tip/Tip";
+import {routing} from "../../../routing";
+import {PageEvent} from "@angular/material/paginator";
+import {UserService} from "../../../domain/user/user.service";
+import {User} from "../../../domain/user/User";
 
 @Component({
-  selector: 'admin-tip.manage',
-  templateUrl: './tip.manage.component.html',
-  styleUrl: './tip.manage.component.scss'
+  selector: 'app-user.manage',
+  templateUrl: './user.manage.component.html',
+  styleUrl: './user.manage.component.scss'
 })
-export class TipManageComponent implements OnInit{
+export class UserManageComponent implements OnInit{
 
   constructor(
-    private tipService: TipService,
+    private userService: UserService,
     protected dialogsService: DialogsService,
     protected router: Router,
   ) {
@@ -33,7 +34,7 @@ export class TipManageComponent implements OnInit{
       }
     ]
   }
-  modelPage: ModelPageI<Tip> = {
+  modelPage: ModelPageI<User> = {
     content: [],
     empty: true,
     first: true,
@@ -46,7 +47,7 @@ export class TipManageComponent implements OnInit{
   pageSizeOptions = [ 10, 25, 100];
 
   ngOnInit(): void {
-    this.tipService.getPaginated(this.pageRequestDto).subscribe(
+    this.userService.getPaginated(this.pageRequestDto).subscribe(
       {
         next:(modelPage)=>{
           this.modelPage = modelPage
@@ -63,14 +64,14 @@ export class TipManageComponent implements OnInit{
 
 
   onAddClicked() {
-    this.router.navigate([routing.admin.tip.save])
+    this.router.navigate([routing.admin.user.save])
   }
 
   onDeleteClicked(model: Tip, index: number) {
     this.dialogsService.openConfirmDialog().afterClosed().subscribe({
       next:(value: any)=>{
         if(value){
-          this.tipService.deleteById(model.id.toString()).subscribe({
+          this.userService.deleteById(model.id.toString()).subscribe({
             complete:()=>{
               this.dialogsService.openInfoDialog("Успешно удалено")
               this.modelPage.content.splice(index,1)
@@ -85,14 +86,14 @@ export class TipManageComponent implements OnInit{
   }
   onEdit(model: Tip) {
     this.router.navigate(
-      [routing.admin.tip.update],
+      [routing.admin.user.update],
       {queryParams: {id: JSON.stringify(model.id)}}
     )
   }
   onPageChange($event:PageEvent) {
     this.pageRequestDto.page = $event.pageIndex
     this.pageRequestDto.size = $event.pageSize
-    this.tipService.getPaginated(this.pageRequestDto).subscribe(
+    this.userService.getPaginated(this.pageRequestDto).subscribe(
       {
         next:(modelPage)=>{
           this.modelPage = modelPage

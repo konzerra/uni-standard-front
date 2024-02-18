@@ -1,4 +1,7 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {Markdown} from "../../domain/markdown/Markdown";
+import {AppApi} from "../../domain/api/AppApi";
+import {MarkdownService} from "../../domain/markdown/markdown.service";
 
 
 
@@ -8,9 +11,23 @@ import {Component, HostListener} from '@angular/core';
   styleUrl: './home.component.scss',
 
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   slidesPerView:number = 3;
   screenWidth!: number;
+  pages: Markdown[] = [];
+  constructor(
+    private markdownService: MarkdownService
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.markdownService.getAll().subscribe({
+      next:(v)=> {
+        this.pages = v
+      }
+    })
+  }
+
 
   @HostListener('window:resize')
   getScreenWidth(){
@@ -25,4 +42,6 @@ export class HomeComponent {
       this.slidesPerView = 3;
     }
   }
+
+  protected readonly AppApi = AppApi;
 }

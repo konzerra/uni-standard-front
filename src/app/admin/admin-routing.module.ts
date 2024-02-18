@@ -10,6 +10,11 @@ const routes: Routes = [
     //canActivate:[AuthGuard], data:{role:'Admin'}
   },
   {
+    path: 'markdown',
+    loadChildren: () => import('./admin.markdown/admin.markdown.module').then(m => m.AdminMarkdownModule),
+    //canActivate:[AuthGuard], data:{role:'Admin'}
+  },
+  {
     path: 'report',
     loadChildren: () => import('./report/admin-report.module').then(m => m.AdminReportModule),
     //canActivate:[AuthGuard], data:{role:'Admin'}
@@ -17,6 +22,11 @@ const routes: Routes = [
   {
     path: 'tip',
     loadChildren: () => import('./tip/admin-tip.module').then(m => m.AdminTipModule),
+    //canActivate:[AuthGuard], data:{role:'Admin'}
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/admin.user.module').then(m => m.AdminUserModule),
     //canActivate:[AuthGuard], data:{role:'Admin'}
   },
   { path: '**', redirectTo: '', pathMatch: 'prefix' },

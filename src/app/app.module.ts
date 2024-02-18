@@ -12,6 +12,7 @@ import {CoreModule} from "./core/core.module";
 import {SharedModule} from "./shared/shared.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthInterceptor} from "./_auth/auth.interceptor";
+import {MarkdownModule} from "ngx-markdown";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MarkdownModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: AppLanguage.languages.Kg,
       loader: {

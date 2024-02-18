@@ -7,10 +7,20 @@ export const routing = {
       save: "admin/standard/save",
       update: "admin/standard/update"
     },
+    markdown: {
+      manage: "admin/markdown/manage",
+      save: "admin/markdown/save",
+      update: "admin/markdown/update"
+    },
     tip: {
       manage: "admin/tip/manage",
       save: "admin/tip/save",
       update: "admin/tip/update"
+    },
+    user: {
+      manage: "admin/user/manage",
+      save: "admin/user/save",
+      update: "admin/user/update"
     },
     report: {
       manage: "admin/report/manage",

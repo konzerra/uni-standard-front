@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {Router} from "@angular/router";
 import {routing} from "../../routing";
 
@@ -8,6 +8,7 @@ import {routing} from "../../routing";
   styleUrls: ['./admin-main.component.scss']
 })
 export class AdminMainComponent {
+
 
   constructor(
       private router: Router
@@ -24,5 +25,9 @@ export class AdminMainComponent {
 
   onTips() {
     this.router.navigate([routing.admin.tip.manage])
+  }
+
+  onPages() {
+    this.router.navigate([routing.admin.markdown.manage])
   }
 }

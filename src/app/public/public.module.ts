@@ -10,6 +10,10 @@ import {HandbookComponent} from "./handbook/handbook.component";
 import {HomeComponent} from "./home/home.component";
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
+import {MarkdownComponent as MD} from "./markdown/markdown.component";
+import {MarkdownModule} from "ngx-markdown";
+
+
 // register Swiper custom elements
 register();
 
@@ -18,13 +22,15 @@ register();
     MainComponent,
     ReportDetailsComponent,
     HandbookComponent,
-    HomeComponent
+    HomeComponent,
+    MD
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
     CoreModule,
-    PipesModule
+    PipesModule,
+    MarkdownModule.forChild(),
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

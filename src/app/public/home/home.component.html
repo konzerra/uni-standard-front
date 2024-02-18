@@ -20,33 +20,17 @@
 
     class="mt-5"
   >
-    <swiper-slide class="swiper-slide-content">
-      <div class="panel mb-3">
-        <br>
-        <h4 class="mt-3">Нормативно-правовые акты</h4>
-        <img src="../../../assets/images/archive-document.svg" class="panel-image">
-        <br class="mb-5">
-        <br>
-      </div>
-    </swiper-slide>
-    <swiper-slide class="swiper-slide-content">
-      <div class="panel mb-3">
-        <br>
-        <h4 class="mt-3">Глоссарий</h4>
-        <img src="../../../assets/images/book-opened.svg" class="panel-image">
-        <br class="mb-5">
-        <br>
-      </div>
-    </swiper-slide>
-    <swiper-slide class="swiper-slide-content">
-      <div class="panel mb-3">
-        <br>
-        <h4 class="mt-3">Глоссарий</h4>
-        <img src="../../../assets/images/book-opened.svg" class="panel-image">
-        <br class="mb-5">
-        <br>
-      </div>
-    </swiper-slide>
+    <ng-container *ngFor="let page of pages">
+      <swiper-slide class="swiper-slide-content">
+        <a class="panel mb-3" href="/markdown?id={{page.id}}">
+          <br>
+          <h4 class="mt-3">{{page.name}}</h4>
+          <img [src]="AppApi.fileDownload+page.image" class="panel-image" alt="...">
+          <br class="mb-5">
+          <br>
+        </a>
+      </swiper-slide>
+    </ng-container>
   </swiper-container>
 
   <div class="row space-top">
