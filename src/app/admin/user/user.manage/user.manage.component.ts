@@ -67,7 +67,7 @@ export class UserManageComponent implements OnInit{
     this.router.navigate([routing.admin.user.save])
   }
 
-  onDeleteClicked(model: Tip, index: number) {
+  onDeleteClicked(model: User, index: number) {
     this.dialogsService.openConfirmDialog().afterClosed().subscribe({
       next:(value: any)=>{
         if(value){
@@ -84,7 +84,7 @@ export class UserManageComponent implements OnInit{
       }
     })
   }
-  onEdit(model: Tip) {
+  onEdit(model: User) {
     this.router.navigate(
       [routing.admin.user.update],
       {queryParams: {id: JSON.stringify(model.id)}}
@@ -99,5 +99,9 @@ export class UserManageComponent implements OnInit{
           this.modelPage = modelPage
         }
       })
+  }
+
+  getRoleNames(user: User): string {
+    return user.roles.map(role => role.name).join(', ');
   }
 }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ReportExcelService } from './report-excel.service';
+import { ReportExcelService } from '../../domain/report/report-excel.service';
 
 describe('ReportExcelServiceService', () => {
   let service: ReportExcelService;

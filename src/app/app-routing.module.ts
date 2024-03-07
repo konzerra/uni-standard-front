@@ -17,9 +17,14 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
+    path: 'private',
+    loadChildren: () => import('./private/private.module').then(m => m.PrivateModule),
+  },
+  {
     path: '',
     loadChildren: () => import('./public/public.module').then(m => m.PublicModule),
   },
+
   { path: '**', redirectTo: '/', pathMatch: 'prefix' },
 ];
 

@@ -1,40 +1,49 @@
-<div class="container-fluid pt-5">
+<div class="container-fluid pt-5 min-vh-100">
   <div class="row mt-5 ">
-    <div class="col-auto  ms-3 me-3 " (click)="onCriteria()">
-      <div class="panel mb-3">
+    <div class="col-auto  ms-3 me-3 " >
+      <a class="panel mb-3" [href]="routing.admin.standard.manage">
         <br>
         <h4 class="mt-3">{{'criteria' | translate}}</h4>
         <i class=" bi bi-card-checklist panel-icon"></i>
         <br class="mb-5">
         <br>
-      </div>
+      </a>
     </div>
-    <div class="col-auto ms-3 me-3" (click)="onReports()">
-      <div class="panel mb-3">
+    <div class="col-auto ms-3 me-3" >
+      <a class="panel mb-3" [href]="routing.admin.report.manage">
         <br>
         <h4 class="mt-3">{{'reports' | translate}}</h4>
         <i class="bi bi-clipboard-data panel-icon "></i>
         <br class="mb-5">
         <br>
-      </div>
+      </a>
     </div>
-    <div class="col-auto ms-3 me-3" (click)="onTips()">
-      <div class="panel mb-3">
+    <div class="col-auto ms-3 me-3" >
+      <a class="panel mb-3" [href]="routing.admin.tip.manage">
         <br>
         <h4 class="mt-3">{{'faq' | translate}}</h4>
         <i class=" bi bi-question-square panel-icon"></i>
         <br class="mb-5">
         <br>
-      </div>
+      </a>
     </div>
-    <div class="col-auto ms-3 me-3" (click)="onPages()">
-      <div class="panel mb-3">
+    <div class="col-auto ms-3 me-3">
+      <a class="panel mb-3" [href]="routing.admin.markdown.manage">
         <br>
         <h4 class="mt-3">Страницы</h4>
         <i class=" bi bi-file-earmark-break panel-icon"></i>
         <br class="mb-5">
         <br>
-      </div>
+      </a>
+    </div>
+    <div class="col-auto ms-3 me-3" >
+      <a class="panel mb-3" [href]="routing.admin.user.manage">
+        <br>
+        <h4 class="mt-3">Пользователи</h4>
+        <i class=" bi bi-people panel-icon"></i>
+        <br class="mb-5">
+        <br>
+      </a>
     </div>
   </div>
 

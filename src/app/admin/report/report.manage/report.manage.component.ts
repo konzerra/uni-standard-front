@@ -8,7 +8,7 @@ import {PageEvent} from "@angular/material/paginator";
 import {routing} from "../../../routing";
 import {ReportService} from "../../../domain/report/report.service";
 import {ReportViewService} from "../report.view.service";
-import {ReportExcelService} from "../report-excel.service";
+import {ReportExcelService} from "../../../domain/report/report-excel.service";
 import {StandardReports, StandardReportsPage} from "../../../domain/standard/Standard";
 
 @Component({
@@ -119,10 +119,14 @@ export class ReportManageComponent implements OnInit{
   }
 
   onF1Download(standard: StandardReports) {
-    this.reportExcelService.standardToExcel(standard)
+    this.reportExcelService.standardToExcelF1(standard)
   }
 
   onF2Download(report: Report) {
-    this.reportExcelService.reportToExcel(report)
+    this.reportExcelService.reportToExcelF2(report)
+  }
+
+  onF3Download(report: Report) {
+    this.reportExcelService.reportToExcelF3(report)
   }
 }

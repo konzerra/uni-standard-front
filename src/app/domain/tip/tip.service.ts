@@ -45,7 +45,6 @@ export class TipService {
   }
 
   public getPaginated(pageRequestDto: PageRequestDto): Observable<ModelPageI<Tip>> {
-    console.log(encodeURIComponent(JSON.stringify(pageRequestDto)))
     return this.httpClient.get<ModelPageI<Tip>>(this.api.getPaginated, {
       params: {
         pageRequestDto : encodeURIComponent(JSON.stringify(pageRequestDto))

@@ -1,0 +1,30 @@
+@import "src/assets/colors.scss";
+
+.panel{
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  top: 0;
+}
+.panel:hover{
+  top: -10px;
+}
+
+.chosen-one{
+  background: $blue-m;
+  color: white;
+  .text-color{
+    color: white;
+  }
+  .btn-text{
+    color: white;
+  }
+}
+
+.row{
+  margin-right: 0;
+}
+
+.on-hover:hover{
+  color: white;
+}

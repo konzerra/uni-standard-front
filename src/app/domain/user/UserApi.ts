@@ -6,9 +6,9 @@ export const UserApi =  {
 
 
   //mostly admin usage
-  getPaginated: ``,
-  saveByAdmin:``,
-  updateByAdmin:``,
-  deleteById:``,
-  getById:``
+  getPaginated: `${AppApi.protectedApi}/user/paginated`,
+  saveByAdmin:`${AppApi.protectedApi}/user/admin/save`,
+  updateByAdmin:`${AppApi.protectedApi}/user/admin/update`,
+  deleteById:`${AppApi.protectedApi}/user/{id}`,
+  getById:`${AppApi.protectedApi}/user/{id}`
 }

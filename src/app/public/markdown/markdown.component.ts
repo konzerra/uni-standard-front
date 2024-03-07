@@ -26,7 +26,7 @@ export class MarkdownComponent implements OnInit {
     this.route.queryParams.subscribe({
         next:(param) =>{
           if(param['id'] == undefined){
-            this.router.navigate([routing.public.main])
+            this.router.navigate([routing.public.home])
           }
           this.markdownService.getById(param['id']).subscribe({
             next:(markdown)=>{
@@ -34,7 +34,7 @@ export class MarkdownComponent implements OnInit {
             },
             error:(err)=>{
               this.dialogsService.openInfoDialog(err)
-              this.router.navigate([routing.public.main])
+              this.router.navigate([routing.public.home])
             }
           })
         }

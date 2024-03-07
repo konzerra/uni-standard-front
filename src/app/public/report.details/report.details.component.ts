@@ -20,7 +20,7 @@ export class ReportDetailsComponent {
     if(this.viewService.selectedReport){
       this.report = this.viewService.selectedReport
     }else{
-      this.router.navigate([routing.public.main])
+      this.router.navigate([routing.public.home])
     }
 
   }

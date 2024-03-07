@@ -1,6 +1,6 @@
 
 <body>
-<div class = "wrapper container pt-5 " >
+<div class = "wrapper container pt-5 min-vh-100" >
   <h2 class="mt-5">Управление пользователями</h2>
 
   <table class="table" >
@@ -9,6 +9,7 @@
       <th scope="col">id</th>
       <th scope="col">ФИО</th>
       <th scope="col">Почта</th>
+      <th scope="col">Роли</th>
       <th scope="col">
         <button type="button" class="btn btn-primary btn-sm text-nowrap"
                 (click)="onAddClicked()"
@@ -24,6 +25,8 @@
       <th>{{model.id}}</th>
       <td>{{model.name }}</td>
       <td>{{model.email }}</td>
+      <td>{{ getRoleNames(model)}}</td>
+
       <td class = "text-nowrap">
         <! –– edit button ––>
         <button type="button" class="btn btn-primary btn-sm me-2" (click)="onEdit(model)">

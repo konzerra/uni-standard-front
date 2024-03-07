@@ -38,7 +38,13 @@ export const routing = {
     signup:"auth/signup"
   },
   public: {
-    main: "",
-    report: "report"
+    home: "",
+    report: "report",
+    open_data: "open-data",
+    markdown: "markdown"
+  },
+  private: {
+    data: "private/data",
+    report: "private/report"
   }
 }

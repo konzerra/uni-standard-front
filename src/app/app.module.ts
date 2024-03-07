@@ -13,6 +13,7 @@ import {SharedModule} from "./shared/shared.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthInterceptor} from "./_auth/auth.interceptor";
 import {MarkdownModule} from "ngx-markdown";
+import {FooterComponent} from "./app-components/footer/footer.component";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -22,7 +23,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

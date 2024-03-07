@@ -2,6 +2,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {Markdown} from "../../domain/markdown/Markdown";
 import {AppApi} from "../../domain/api/AppApi";
 import {MarkdownService} from "../../domain/markdown/markdown.service";
+import {routing} from "../../routing";
 
 
 
@@ -44,4 +45,5 @@ export class HomeComponent implements OnInit{
   }
 
   protected readonly AppApi = AppApi;
+  protected readonly routing = routing;
 }

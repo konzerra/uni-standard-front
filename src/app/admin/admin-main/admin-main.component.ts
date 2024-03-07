@@ -10,24 +10,9 @@ import {routing} from "../../routing";
 export class AdminMainComponent {
 
 
-  constructor(
-      private router: Router
-  ) {
+  constructor() {
   }
 
-  onCriteria() {
-    this.router.navigate([routing.admin.standard.manage])
-  }
 
-  onReports() {
-    this.router.navigate([routing.admin.report.manage])
-  }
-
-  onTips() {
-    this.router.navigate([routing.admin.tip.manage])
-  }
-
-  onPages() {
-    this.router.navigate([routing.admin.markdown.manage])
-  }
+  protected readonly routing = routing;
 }

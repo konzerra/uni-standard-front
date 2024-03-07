@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CustomErrorStateMatcher} from "../../../utils/CustomErrorStateMatcher";
 import {StandardService} from "../../../domain/standard/standard.service";
 import {DialogsService} from "../../../shared/dialogs/dialogs.service";
@@ -12,7 +12,7 @@ import {ReportUpdateForm} from "./report.update.form";
   templateUrl: './report.update.component.html',
   styleUrl: './report.update.component.scss'
 })
-export class ReportUpdateComponent {
+export class ReportUpdateComponent implements OnInit{
   form = new ReportUpdateForm()
   matcher = new CustomErrorStateMatcher();
   constructor(

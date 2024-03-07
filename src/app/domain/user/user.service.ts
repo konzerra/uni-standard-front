@@ -28,6 +28,7 @@ export class UserService {
   }
 
   public deleteById(id:string):Observable<any>{
+    console.log(ApiPathUtil.insertId(this.api.deleteById, id))
     return this.httpClient.delete(ApiPathUtil.insertId(this.api.deleteById, id)
     )
   }
@@ -42,7 +43,6 @@ export class UserService {
 
 
   public getPaginated(pageRequestDto: PageRequestDto): Observable<ModelPageI<User>> {
-    console.log(encodeURIComponent(JSON.stringify(pageRequestDto)))
     return this.httpClient.get<ModelPageI<User>>(this.api.getPaginated, {
       params: {
         pageRequestDto : encodeURIComponent(JSON.stringify(pageRequestDto))
