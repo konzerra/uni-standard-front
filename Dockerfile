@@ -1,20 +1,23 @@
 # Base image
 FROM node:20-alpine
 
-# Set the working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the app files into the container
+# Copy the application files into the container
 COPY . .
 
-# Install dependencies and build the app
-RUN npm install && npm run build --prod
+# Install dependencies
+RUN npm install
 
-# Expose port 5001
+# Build the project (assuming your build script is correctly set in your package.json)
+RUN npm run build
+
+# Expose the application's port
 EXPOSE 5200
 
-# Start the app
-CMD ["npm", "start"]
+# Start the application using node
+CMD ["node", "index.js"]
 
 
 
