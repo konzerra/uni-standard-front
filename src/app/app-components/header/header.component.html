@@ -13,11 +13,11 @@
         <li class=" ms-3">
           <a class="nav-link active" aria-current="page" routerLink = "/">{{"main" | translate}}</a>
         </li>
-        <li class="nav-item ms-3">
+        <li *ngIf="hasRole(UserRoles.Admin)" class="nav-item ms-3">
           <a class="nav-link active" aria-current="page" routerLink = "admin">{{"admin" | translate}}</a>
         </li>
-        <li class="nav-item ms-3">
-          <a class="nav-link active" aria-current="page" routerLink = "/private">Закрытые данные</a>
+        <li *ngIf="hasRole(UserRoles.DataAccess)" class="nav-item ms-3">
+          <a class="nav-link active" aria-current="page" routerLink = "/private">Бизнес процессы</a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link active" aria-current="page" routerLink = "/handbook">Справочник</a>

@@ -19,8 +19,8 @@ export class UserUpdateForm {
       id: this.id,
       name: this.name.value || "",
       email: this.email.value || "",
-      //null is needed to be sent otherwise it sends empty string and crashes
-      password: this.password.value || null,
+      // Check if password is null, empty, or blank, then send null, otherwise send the value
+      password: this.password.value && this.password.value.trim() ? this.password.value : null,
       roles: this.roles.value || ['User']
     }
   }

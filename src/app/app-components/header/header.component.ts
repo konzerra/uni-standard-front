@@ -5,6 +5,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {Router} from "@angular/router";
 import {AuthService} from "../../auth/auth.service";
 import {routing} from "../../routing";
+import {UserRoles} from "../../domain/user/UserRoles";
 
 @Component({
   selector: 'app-header',
@@ -44,4 +45,6 @@ export class HeaderComponent {
     this.translate.use(lang);
     window.location.reload()
   }
+
+  protected readonly UserRoles = UserRoles;
 }
