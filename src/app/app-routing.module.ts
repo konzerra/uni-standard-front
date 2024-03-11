@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthGuard} from "./_auth/auth.guard";
+import {UserRoles} from "./domain/user/UserRoles";
 
 const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-    //canActivate:[AuthGuard], data:{role:'Admin'}
+    canActivate:[AuthGuard], data:{role:'Admin'}
   },
   {
     path: 'user',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule),
-    //canActivate:[AuthGuard], data:{role:'Admin'}
+    canActivate:[AuthGuard], data:{role:UserRoles.User}
   },
   {
     path: 'auth',
@@ -19,6 +21,7 @@ const routes: Routes = [
   {
     path: 'private',
     loadChildren: () => import('./private/private.module').then(m => m.PrivateModule),
+    canActivate:[AuthGuard], data:{role:UserRoles.DataAccess}
   },
   {
     path: '',
