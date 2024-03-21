@@ -39,22 +39,20 @@ export class UniversitySaveForm {
   }
 
   valid(): boolean {
-    return this.version.valid &&
-      this.name.valid && this.rectorName.valid
-    // (
-    //   this.version.valid &&
-    //   this.name.valid &&
-    //   this.address.valid &&
-    //   this.yearFounded.valid &&
-    //   this.rectorName.valid &&
-    //   this.numOfEducationalUnits.valid &&
-    //   this.studentNumber.valid() &&
-    //   this.programNumber.valid() &&
-    //   this.academicStaffTraining.valid() &&
-    //   this.numOfFirstYearStudents.valid &&
-    //   this.numOfGraduates.valid &&
-    //   this.totalAreaOfEducationalFund.valid
-    // );
+    return (
+      this.version.valid &&
+      this.name.valid &&
+      this.address.valid &&
+      this.yearFounded.valid &&
+      this.rectorName.valid &&
+      this.numOfEducationalUnits.valid &&
+      this.studentNumber.valid() &&
+      this.programNumber.valid() &&
+      this.academicStaffTraining.valid() &&
+      this.numOfFirstYearStudents.valid &&
+      this.numOfGraduates.valid &&
+      this.totalAreaOfEducationalFund.valid
+    );
   }
 }
 
@@ -83,17 +81,16 @@ export class StudentNumberSaveForm {
   }
 
   valid(): boolean {
-    return true
-    // (
-    //   this.bachelor.valid &&
-    //   this.master.valid &&
-    //   this.specialty.valid &&
-    //   this.spo.valid &&
-    //   this.postgraduate.valid &&
-    //   this.doctorate.valid &&
-    //   this.seeker.valid &&
-    //   this.phd.valid
-    // );
+    return (
+      this.bachelor.valid &&
+      this.master.valid &&
+      this.specialty.valid &&
+      this.spo.valid &&
+      this.postgraduate.valid &&
+      this.doctorate.valid &&
+      this.seeker.valid &&
+      this.phd.valid
+    );
   }
 }
 
@@ -116,14 +113,13 @@ export class ProgramNumberSaveForm {
   }
 
   valid(): boolean {
-    return true
-    // (
-    //   this.bachelor.valid &&
-    //   this.master.valid &&
-    //   this.specialty.valid &&
-    //   this.spo.valid &&
-    //   this.dpo.valid
-    // );
+    return (
+      this.bachelor.valid &&
+      this.master.valid &&
+      this.specialty.valid &&
+      this.spo.valid &&
+      this.dpo.valid
+    );
   }
 }
 
@@ -143,7 +139,7 @@ export class AcademicStaffTrainingSaveForm {
   }
 
   valid(): boolean {
-    return true //this.postgraduate.valid && this.doctoral.valid && this.phd.valid;
+    return this.postgraduate.valid && this.doctoral.valid && this.phd.valid;
   }
 }
 
