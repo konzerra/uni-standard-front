@@ -1,4 +1,3 @@
-import {UniversitySaveDto} from "../../../domain/university/dto/UniversitySaveDto";
 import {FormControl, Validators} from "@angular/forms";
 import {StudentNumber} from "../../../domain/university/StudentNumber";
 import {AcademicStaffTraining} from "../../../domain/university/AcademicStaffTraining";
@@ -65,16 +64,17 @@ export class UniversityUpdateForm {
       this.id != null &&
       this.version.valid &&
       this.name.valid &&
-      this.address.valid &&
-      this.yearFounded.valid &&
-      this.rectorName.valid &&
-      this.numOfEducationalUnits.valid &&
-      this.studentNumber.valid() &&
-      this.programNumber.valid() &&
-      this.academicStaffTraining.valid() &&
-      this.numOfFirstYearStudents.valid &&
-      this.numOfGraduates.valid &&
-      this.totalAreaOfEducationalFund.valid
+      this.rectorName.valid
+      // &&
+      // this.address.valid &&
+      // this.yearFounded.valid &&
+      // this.numOfEducationalUnits.valid &&
+      // this.studentNumber.valid() &&
+      // this.programNumber.valid() &&
+      // this.academicStaffTraining.valid() &&
+      // this.numOfFirstYearStudents.valid &&
+      // this.numOfGraduates.valid &&
+      // this.totalAreaOfEducationalFund.valid
     );
   }
 }
@@ -119,15 +119,16 @@ export class StudentNumberUpdateForm {
 
   valid(): boolean {
     return (
-      this.id != null &&
-      this.bachelor.valid &&
-      this.master.valid &&
-      this.specialty.valid &&
-      this.spo.valid &&
-      this.postgraduate.valid &&
-      this.doctorate.valid &&
-      this.seeker.valid &&
-      this.phd.valid
+      this.id != null
+      // &&
+      // this.bachelor.valid &&
+      // this.master.valid &&
+      // this.specialty.valid &&
+      // this.spo.valid &&
+      // this.postgraduate.valid &&
+      // this.doctorate.valid &&
+      // this.seeker.valid &&
+      // this.phd.valid
     );
   }
 }
@@ -162,12 +163,13 @@ export class ProgramNumberUpdateForm {
 
   valid(): boolean {
     return (
-      this.id != null &&
-      this.bachelor.valid &&
-      this.master.valid &&
-      this.specialty.valid &&
-      this.spo.valid &&
-      this.dpo.valid
+      this.id != null
+      // &&
+      // this.bachelor.valid &&
+      // this.master.valid &&
+      // this.specialty.valid &&
+      // this.spo.valid &&
+      // this.dpo.valid
     );
   }
 }
@@ -196,9 +198,10 @@ export class AcademicStaffTrainingUpdateForm {
   }
 
   valid(): boolean {
-    return this.id != null &&
-      this.postgraduate.valid &&
-      this.doctoral.valid && this.phd.valid;
+    return this.id != null
+      // &&
+      // this.postgraduate.valid &&
+      // this.doctoral.valid && this.phd.valid;
   }
 }
 
